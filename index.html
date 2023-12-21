@@ -20,7 +20,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
                 <span class="d-block d-lg-none">Sagar Malla</span>
-                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/pp.jpg" alt="..." /></span>
+                <span class="d-none d-lg-block"><img id="profileImg" class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/pp.jpg" alt="sagarMalla" /></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -351,6 +351,33 @@
     </div>
 
     <script>
+        // Function to detect the operating system
+  function detectOS() {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    if (/android/i.test(userAgent)) {
+      return 'Android';
+    }
+
+    return 'Other';
+  }
+
+  // Function to show or hide the image based on the detected OS
+  function toggleImageVisibility() {
+    const os = detectOS();
+    const profileImg = document.getElementById('profileImg');
+
+    if (os === 'Android') {
+      profileImg.style.display = 'block';
+    } else {
+      profileImg.style.display = 'block';
+    }
+  }
+
+  // Call the function on page load
+  window.onload = toggleImageVisibility;  
+
+  //Facebook Chat api
       var chatbox = document.getElementById('fb-customer-chat');
       chatbox.setAttribute("page_id", "679198202458522");
       chatbox.setAttribute("attribution", "biz_inbox");

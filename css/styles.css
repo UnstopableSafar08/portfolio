@@ -12776,13 +12776,13 @@ section.resume-section .resume-section-content {
   position: fixed;
   padding: 5px;
   margin: 5px;
-  bottom: 40px;
-  right: 20px;
+  bottom: 90px;
+  right: 26px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   color: white;
-  box-shadow: rgba(3, 9, 47, 0.79) 2px 4px 5px;
+  box-shadow: rgba(3, 9, 47, 0.79) 2px 2px 5px;
   background-color: #1699c6;
 }
 

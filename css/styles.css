@@ -12777,13 +12777,12 @@ section.resume-section .resume-section-content {
   padding: 5px;
   margin: 5px;
   bottom: 90px;
-  right: 26px;
+  right: 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  color: white;
-  box-shadow: rgba(3, 9, 47, 0.79) 2px 2px 5px;
-  background-color: #1699c6;
+  color: black;
+  background-color: orangered;
 }
 
 .material-symbols-outlined {

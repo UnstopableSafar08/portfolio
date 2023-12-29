@@ -12775,14 +12775,11 @@ section.resume-section .resume-section-content {
   display: none;
   position: fixed;
   padding: 5px;
-  margin: 5px;
   bottom: 90px;
   right: 30px;
-  border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
-  color: black;
-  background-color: orangered;
+  background-color: #1699c6;
 }
 
 .material-symbols-outlined {

@@ -58,11 +58,13 @@
                     Sagar
                     <span class="text-primary">Malla</span>
                 </h1>
+
                 <div class="subheading mb-5">
-                    <label style="font-size: 20px;">System and Network, DevOPs Engineer</label><br>
+                    <label style="font-size: 20px;"> <span style="color: rgb(6, 180, 227); font-size: 23px; font-weight: bold;">I'm a</span> &nbsp; &nbsp;<span class="auto-type"></span> </label><br>
                     Dhumbarahi-4, Kathmandu, 44600
                     <a href="mailto:sagarmalla08@gtmail.com">sagarmalla08@gmail.com</a>
                 </div>
+
                 <p class="lead mb-5">
                     Experience in designing a Physical/Virtual network and execution according to the specifications.
                     Maintaining and monitoring computer systems, servers, and NAS to ensure working perfectly and
@@ -418,7 +420,8 @@
     <script>
         AOS.init();
     </script>
-
+    <!-- Auto-typing -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <!-- go to top button -->
     <button id="goToTopBtn" onclick="goToTop()"> <img class="rockimg" src="assets/img/rocket-launch.gif" alt="goToTopBtn">
         <!-- <i class="fa-solid fa-jet-fighter-up material-symbols-outlined"></i> -->
@@ -430,7 +433,7 @@
     <!-- Your Chat Plugin code -->
     <div id="fb-customer-chat" class="fb-customerchat">
     </div>
-
+                
     <script>
         // Function to detect the operating system
         function detectOS() {
@@ -463,7 +466,13 @@
         chatbox.setAttribute("page_id", "679198202458522");
         chatbox.setAttribute("attribution", "biz_inbox");
 
-
+        // Auto-typing script
+        var typed = new Typed(".auto-type",{
+        strings : ["System and Network Engineer", "DevOPs Engineer", "Web Developper", "Graphics Designer", "Blogger", "System Network and DevOPs Engineer"],
+        typeSpeed : 50,
+        backSpeed : 20,
+        looped : true
+      })
         //Go_To_Top Button script, Show or hide the button based on scroll position
         window.onscroll = function () {
             showGoToTopButton();

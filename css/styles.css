@@ -12802,3 +12802,9 @@ section.resume-section .resume-section-content {
   height: 40px; 
   width: 40px;
 }
+
+.auto-typing{
+  font-size: 20px;
+  color: red;
+  font-weight: bold;
+}

@@ -36,10 +36,14 @@
             min-height: 100vh;
             margin: 0;
             padding-top: 3.375rem;
-            cursor: none;
-            font-family: 'Muli', sans-serif;
             color: var(--text-dim) !important;
             overflow-x: hidden;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            body {
+                cursor: none;
+            }
         }
 
         @media (min-width: 992px) {
@@ -426,31 +430,37 @@
         // Custom Cursor Logic
         const cursorDot = document.querySelector(".cursor-dot");
         const cursorOutline = document.querySelector(".cursor-outline");
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-        window.addEventListener("mousemove", function (e) {
-            const posX = e.clientX;
-            const posY = e.clientY;
+        if (isTouchDevice) {
+            if (cursorDot) cursorDot.style.display = "none";
+            if (cursorOutline) cursorOutline.style.display = "none";
+        } else {
+            window.addEventListener("mousemove", function (e) {
+                const posX = e.clientX;
+                const posY = e.clientY;
 
-            cursorDot.style.transform = `translate3d(${posX}px, ${posY}px, 0)`;
+                cursorDot.style.transform = `translate3d(${posX}px, ${posY}px, 0)`;
 
-            cursorOutline.animate({
-                transform: `translate3d(${posX - 20}px, ${posY - 20}px, 0)`
-            }, { duration: 400, fill: "forwards" });
-        });
-
-        const staticLinks = document.querySelectorAll("nav a, .navbar-brand");
-        staticLinks.forEach(link => {
-            link.addEventListener("mouseenter", () => {
-                cursorOutline.style.width = "60px";
-                cursorOutline.style.height = "60px";
-                cursorOutline.style.background = "rgba(129, 140, 248, 0.1)";
+                cursorOutline.animate({
+                    transform: `translate3d(${posX - 20}px, ${posY - 20}px, 0)`
+                }, { duration: 400, fill: "forwards" });
             });
-            link.addEventListener("mouseleave", () => {
-                cursorOutline.style.width = "40px";
-                cursorOutline.style.height = "40px";
-                cursorOutline.style.background = "transparent";
+
+            const staticLinks = document.querySelectorAll("nav a, .navbar-brand");
+            staticLinks.forEach(link => {
+                link.addEventListener("mouseenter", () => {
+                    cursorOutline.style.width = "60px";
+                    cursorOutline.style.height = "60px";
+                    cursorOutline.style.background = "rgba(129, 140, 248, 0.1)";
+                });
+                link.addEventListener("mouseleave", () => {
+                    cursorOutline.style.width = "40px";
+                    cursorOutline.style.height = "40px";
+                    cursorOutline.style.background = "transparent";
+                });
             });
-        });
+        }
     </script>
 </body>
 

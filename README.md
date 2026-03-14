@@ -1,7 +1,7 @@
 # Sagar Malla - Portfolio
 
 Sagar Malla Portfolio
-http://localhost:3000
+https://sagarmalla.info.np/
 
 A premium, highly interactive portfolio website designed with a Midnight Aurora aesthetic. This project showcases my journey as a DevOps Engineer and System Administrator, featuring dynamic animations, a custom design system, and a dedicated tutorial lab.
 

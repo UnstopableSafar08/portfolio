@@ -550,8 +550,9 @@
                             Fortigate Firewall.</li>
                     </ul>
                 </div>
-                <div class="flex-shrink-0"><span class="text-primary">Jan 2022 - <s>Present</s></span></div>
+                <div class="flex-shrink-0"><span class="text-primary">Jan 2022 - Present</span></div>
             </div>
+        </div>
             <!-- <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
                             <h3 class="mb-0">Neema Education Foundation Pvt. Ltd.</h3>
@@ -602,8 +603,7 @@
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">Nov 2021 - Jan 2022</span></div>
                     </div> -->
-    </div>
-    </section>
+        </section>
     <hr class="m-0" />
     <!-- Education-->
     <section class="resume-section" id="education" data-aos="fade-up" data-aos-duration="1000">
@@ -683,7 +683,6 @@
                 <div class="flex-shrink-0"><span class="text-primary">Contribution to the Club.</span></div>
             </div>
         </div>
-        </div>
     </section>
     <hr class="m-0" />
     <!-- Skills-->
@@ -709,24 +708,27 @@
                             title="Grafana"></li>
                     <li class="list-inline-item" title=" ELK">ELK STACKS,</li>
                     <li class="list-inline-item" title=" GLIP">GLPI Assets,</li>
-                    <br>
-                    <hr>
-                    <div class="subheading mb-3" title=" ">Virtualizations</div>
-                    <li class="list-inline-item" title=" VMWare ESXI">ESXI,</li>
-                    <li class="list-inline-item" title="Xen-XCP_NG ">XCP-NG,</li>
-                    <li class="list-inline-item" title=" Hyper-V">Hypervisor,</li>
-                    <br>
-                    <hr>
-                    <div class="subheading mb-3">Operating System</div>
-                    <li class="list-inline-item"><i class="fa-brands fa-windows" title="Windows OS"></i></li>
-                    <li class="list-inline-item"><i class="fa-brands fa-redhat" title="RHEL"></i></li>
-                    <li class="list-inline-item"><i class="fa-brands fa-ubuntu" title="Ubuntu Server"></i></li>
-                    <li class="list-inline-item"><i class="fa-brands fa-centos" title="CentOS Server"></i></i>
-                    </li>
-                    <li class="list-inline-item"><i class="fa-brands fa-linux" title="Linux OS"></i></li>
-                    <li class="list-inline-item" title="NAS Server">Synology</li>
-                    <li class="list-inline-item" title="NAS Server">QNAP</li>
                 </ul>
+                <div class="mt-4">
+                    <div class="subheading mb-3" title=" ">Virtualizations</div>
+                    <ul class="list-inline dev-icons">
+                        <li class="list-inline-item" title=" VMWare ESXI">ESXI,</li>
+                        <li class="list-inline-item" title="Xen-XCP_NG ">XCP-NG,</li>
+                        <li class="list-inline-item" title=" Hyper-V">Hypervisor,</li>
+                    </ul>
+                </div>
+                <div class="mt-4">
+                    <div class="subheading mb-3">Operating System</div>
+                    <ul class="list-inline dev-icons">
+                        <li class="list-inline-item"><i class="fa-brands fa-windows" title="Windows OS"></i></li>
+                        <li class="list-inline-item"><i class="fa-brands fa-redhat" title="RHEL"></i></li>
+                        <li class="list-inline-item"><i class="fa-brands fa-ubuntu" title="Ubuntu Server"></i></li>
+                        <li class="list-inline-item"><i class="fa-brands fa-centos" title="CentOS Server"></i></li>
+                        <li class="list-inline-item"><i class="fa-brands fa-linux" title="Linux OS"></i></li>
+                        <li class="list-inline-item" title="NAS Server">Synology</li>
+                        <li class="list-inline-item" title="NAS Server">QNAP</li>
+                    </ul>
+                </div>
             </div>
             <br>
             <hr>
@@ -912,6 +914,7 @@
             initCursor();
         };
 
+
         function initCursor() {
             const cursorDot = document.querySelector(".cursor-dot");
             const cursorOutline = document.querySelector(".cursor-outline");
@@ -976,10 +979,10 @@
             // fadeOutDelay: 500,
         })
         // Go_To_Top Button script, Show or hide the button based on scroll position
-        window.onscroll = function () {
+        window.addEventListener('scroll', function () {
             showGoToTopButton();
             handleSidebarScroll();
-        };
+        });
 
         function handleSidebarScroll() {
             const sideNav = document.getElementById('sideNav');
@@ -1002,8 +1005,17 @@
 
         // Scroll to the top when the button is clicked
         function goToTop() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            // Force active state to About
+            const aboutLink = document.querySelector('a[href="#about"]');
+            if (aboutLink) {
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(l => l.classList.remove('active'));
+                aboutLink.classList.add('active');
+            }
         }
     </script>
 

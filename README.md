@@ -13,8 +13,11 @@ A premium, highly interactive portfolio website designed with a Midnight Aurora 
   - Custom Cursor: A dynamic dot-and-outline cursor that reacts to interactive elements.
   - AOS Animations: Smooth scroll-triggered animations for a professional feel.
   - Glassmorphism & Material Design: A blend of modern glass effects and solid material surfaces for depth and clarity.
-- Dedicated Tutorials Hub: A separate page (tuto.html) to showcase laboratory practices and technical documentation.
-- Skeleton Loading: Pre-rendered placeholders for a smooth perceived performance during initial load.
+- Dedicated Tutorials Hub: A separate section (`tuto.html`) for showcasing laboratory practices and technical documentation.
+- Certifications Gallery: An interactive carousel gallery (`gallery.html`) that highlights professional certifications and awards.
+- Smart Fallback System: Built-in compatibility for static hosting (GitHub/Cloudflare) ensuring dynamic listings work everywhere.
+- Cross-Platform Optimized: Tailored experiences for Desktop (Custom Cursor) and Mobile (Default Navigation, single-row social icons).
+- Skeleton Loading: Modern shimmer placeholders in the Gallery and Tutorials for a smooth loading experience.
 
 ## Technologies Used
 
@@ -30,14 +33,14 @@ A premium, highly interactive portfolio website designed with a Midnight Aurora 
 .
 ├── index.html          # Main portfolio entry point
 ├── tuto.html           # Tutorials & Lab index page
+├── gallery.html        # Certifications Gallery page
 ├── assets/
-│   └── img/            # Images, GIFs, and brand assets
+│   ├── img/            # Brand assets & GIFs
+│   └── certifications/ # Certification images
 ├── css/
 │   └── styles.css      # Core theme and Bootstrap overrides
-├── js/
-│   └── scripts.js      # Global layout logic
 └── tuto/
-    └── lab.html        # Tutorial lab documentation
+    └── *.html          # Individual tutorial lab files
 ```
 
 ## Getting Started

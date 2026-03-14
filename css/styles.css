@@ -12737,6 +12737,13 @@ p.lead {
   border-radius: 100%;
   font-size: 35px;
   margin-right: 3px;
+  flex-shrink: 0;
+}
+
+.social-icons {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: visible;
 }
 
 .social-icons .social-icon:last-child {
@@ -12797,6 +12804,8 @@ section.resume-section .resume-section-content {
   border-radius: 100%;
   cursor: pointer;
   background-color: #1699c6;
+  z-index: 10005;
+  pointer-events: auto;
 }
 #goToTopBtn:hover{
     transition: all 2s;

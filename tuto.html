@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Tutorials - Sagar Malla</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        :root {
+            --accent-primary: #818cf8;
+            --accent-secondary: #c084fc;
+            --accent-tertiary: #2dd4bf;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+        }
+
+        body {
+            background-color: #020617;
+            background-image:
+                radial-gradient(at 0% 0%, #0f172a 0, transparent 55%),
+                radial-gradient(at 50% 0%, #1e1b4b 0, transparent 50%),
+                radial-gradient(at 100% 0%, #2e1065 0, transparent 55%),
+                radial-gradient(at 0% 50%, #0c4a6e 0, transparent 50%),
+                radial-gradient(at 100% 50%, #4c1d95 0, transparent 50%),
+                radial-gradient(at 0% 100%, #1e293b 0, transparent 50%),
+                radial-gradient(at 50% 100%, #020617 0, transparent 50%),
+                radial-gradient(at 100% 100%, #1e1b4b 0, transparent 50%);
+            background-attachment: fixed;
+            background-size: cover;
+            min-height: 100vh;
+            margin: 0;
+            padding-top: 3.375rem;
+            cursor: none;
+            font-family: 'Muli', sans-serif;
+            color: var(--text-dim) !important;
+            overflow-x: hidden;
+        }
+
+        @media (min-width: 992px) {
+            body {
+                padding-top: 0;
+                padding-left: 17rem;
+            }
+        }
+
+        .resume-section-content {
+            background: rgba(30, 41, 59, 0.4);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .tuto-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(45, 55, 72, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none !important;
+        }
+
+        .tuto-card:hover {
+            background: rgba(45, 55, 72, 0.5);
+            border-color: var(--accent-primary);
+            transform: translateX(10px);
+        }
+
+        .tuto-info h3 {
+            margin: 0;
+            color: var(--text-main);
+            font-family: 'Saira Extra Condensed', sans-serif;
+            font-size: 1.5rem;
+        }
+
+        .tuto-info p {
+            margin: 0.5rem 0 0;
+            font-size: 0.9rem;
+            color: var(--text-dim);
+        }
+
+        .tuto-icon {
+            font-size: 1.5rem;
+            color: var(--accent-tertiary);
+        }
+
+        /* Custom Cursor */
+        .cursor-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent-tertiary);
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 10000;
+            border-radius: 50%;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--accent-primary);
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9999;
+            border-radius: 50%;
+        }
+        
+        #sideNav {
+            background: #0f172a !important;
+            border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+            z-index: 1030;
+        }
+
+        .nav-link {
+            color: var(--text-dim) !important;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--text-main) !important;
+            text-shadow: 0 0 10px var(--accent-primary);
+        }
+
+        /* Pagination Styling */
+        .pagination {
+            gap: 10px;
+        }
+
+        .page-link {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-dim);
+            border-radius: 8px !important;
+            padding: 0.8rem 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .page-link:hover {
+            background: rgba(129, 140, 248, 0.2);
+            border-color: var(--accent-primary);
+            color: var(--text-main);
+            transform: translateY(-2px);
+        }
+
+        .page-item.active .page-link {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            color: #020617;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(129, 140, 248, 0.3);
+        }
+
+        .page-item.disabled .page-link {
+            background: transparent;
+            border-color: rgba(255, 255, 255, 0.05);
+            color: rgba(148, 163, 184, 0.3);
+            cursor: none;
+        }
+
+        /* Search Box Styling */
+        .search-container {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .search-input {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+            border-radius: 12px;
+            padding: 1.2rem 1.5rem 1.2rem 3.5rem;
+            width: 100%;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .search-input:focus {
+            background: rgba(30, 41, 59, 0.6);
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 20px rgba(129, 140, 248, 0.2);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body id="page-top">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="sideNav">
+        <a class="navbar-brand js-scroll-trigger" href="index.html">
+            <span class="d-block d-lg-none">Sagar Malla</span>
+            <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2"
+                    src="assets/img/sagarmalla.gif" alt="sagarMalla" /></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="#navbarResponsive">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Back to Portfolio</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid p-0">
+        <section class="resume-section p-3 p-lg-5">
+            <div class="resume-section-content" data-aos="fade-up">
+                <h2 class="mb-5">Tutorial Labs</h2>
+                
+                <!-- Search Box -->
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="search-input" class="search-input" placeholder="Search tutorials by name...">
+                </div>
+
+                <div id="tuto-list" class="tuto-list">
+                    <!-- Dynamic tutorial cards will be inserted here -->
+                    <div class="text-center py-5" id="loader">
+                        <div class="spinner-border text-info" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination Container -->
+                <nav aria-label="Tutorial pagination" class="mt-5">
+                    <ul class="pagination justify-content-center" id="pagination-list">
+                        <!-- Pagination items will be inserted here -->
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        let allLinks = [];
+        let filteredLinks = [];
+        const itemsPerPage = 5;
+        let currentPage = 1;
+
+        async function loadTutorials() {
+            const listContainer = document.getElementById('tuto-list');
+            const searchInput = document.getElementById('search-input');
+
+            try {
+                const response = await fetch('./tuto/');
+                if (!response.ok) throw new Error('Could not fetch directory listing');
+
+                const html = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                
+                allLinks = Array.from(doc.querySelectorAll('a'))
+                    .map(a => a.getAttribute('href'))
+                    .filter(href => href && href.endsWith('.html') && href !== 'index.html')
+                    .sort();
+
+                if (allLinks.length === 0) {
+                    listContainer.innerHTML = '<p class="text-center">No tutorials found in /tuto/ folder.</p>';
+                    return;
+                }
+
+                filteredLinks = [...allLinks];
+
+                // Search Event Listener
+                searchInput.addEventListener('input', (e) => {
+                    const query = e.target.value.toLowerCase();
+                    filteredLinks = allLinks.filter(href => {
+                        const name = decodeURIComponent(href).replace('.html', '').replace(/[-_]/g, ' ').toLowerCase();
+                        return name.includes(query);
+                    });
+                    renderPage(1);
+                });
+
+                renderPage(1);
+
+            } catch (error) {
+                console.error('Error loading tutorials:', error);
+                listContainer.innerHTML = `
+                    <div class="alert alert-warning bg-dark text-light border-0">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        Note: Automatic directory listing is currently available on development servers. 
+                    </div>
+                `;
+            }
+        }
+
+        function renderPage(page) {
+            currentPage = page;
+            const listContainer = document.getElementById('tuto-list');
+            listContainer.innerHTML = '';
+            
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const pageItems = filteredLinks.slice(start, end);
+            
+            if (pageItems.length === 0) {
+                listContainer.innerHTML = '<div class="text-center py-5"><p>No tutorials match your search.</p></div>';
+            }
+
+            pageItems.forEach(href => {
+                let name = decodeURIComponent(href)
+                    .replace('.html', '')
+                    .replace(/-/g, ' ')
+                    .replace(/_/g, ' ')
+                    .trim();
+                
+                name = name.split(' ')
+                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(' ');
+
+                const card = document.createElement('a');
+                card.href = `tuto/${href}`;
+                card.className = 'tuto-card';
+                card.innerHTML = `
+                    <div class="tuto-info">
+                        <h3>${name}</h3>
+                        <p>Lab documentation and technical guides.</p>
+                    </div>
+                    <div class="tuto-icon">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                `;
+                
+                card.addEventListener("mouseenter", () => {
+                    cursorOutline.style.width = "60px";
+                    cursorOutline.style.height = "60px";
+                    cursorOutline.style.background = "rgba(129, 140, 248, 0.1)";
+                });
+                card.addEventListener("mouseleave", () => {
+                    cursorOutline.style.width = "40px";
+                    cursorOutline.style.height = "40px";
+                    cursorOutline.style.background = "transparent";
+                });
+
+                listContainer.appendChild(card);
+            });
+
+            updatePaginationControls();
+            AOS.refresh();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function updatePaginationControls() {
+            const paginationList = document.getElementById('pagination-list');
+            const totalPages = Math.ceil(filteredLinks.length / itemsPerPage);
+            
+            if (totalPages <= 1) {
+                paginationList.innerHTML = '';
+                return;
+            }
+
+            let paginationHtml = '';
+            
+            // Previous button
+            paginationHtml += `
+                <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+                    <a class="page-link" href="#" onclick="renderPage(${currentPage - 1}); return false;">Previous</a>
+                </li>
+            `;
+
+            // Page numbers
+            for (let i = 1; i <= totalPages; i++) {
+                paginationHtml += `
+                    <li class="page-item ${currentPage === i ? 'active' : ''}">
+                        <a class="page-link" href="#" onclick="renderPage(${i}); return false;">${i}</a>
+                    </li>
+                `;
+            }
+
+            // Next button
+            paginationHtml += `
+                <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+                    <a class="page-link" href="#" onclick="renderPage(${currentPage + 1}); return false;">Next</a>
+                </li>
+            `;
+
+            paginationList.innerHTML = paginationHtml;
+            
+            // Re-apply cursor effects to pagination links
+            const pLinks = paginationList.querySelectorAll('.page-link');
+            pLinks.forEach(link => {
+                link.addEventListener("mouseenter", () => {
+                    cursorOutline.style.width = "60px";
+                    cursorOutline.style.height = "60px";
+                    cursorOutline.style.background = "rgba(129, 140, 248, 0.1)";
+                });
+                link.addEventListener("mouseleave", () => {
+                    cursorOutline.style.width = "40px";
+                    cursorOutline.style.height = "40px";
+                    cursorOutline.style.background = "transparent";
+                });
+            });
+        }
+
+        loadTutorials();
+        
+        // Custom Cursor Logic
+        const cursorDot = document.querySelector(".cursor-dot");
+        const cursorOutline = document.querySelector(".cursor-outline");
+
+        window.addEventListener("mousemove", function (e) {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            cursorDot.style.transform = `translate3d(${posX}px, ${posY}px, 0)`;
+
+            cursorOutline.animate({
+                transform: `translate3d(${posX - 20}px, ${posY - 20}px, 0)`
+            }, { duration: 400, fill: "forwards" });
+        });
+
+        const staticLinks = document.querySelectorAll("nav a, .navbar-brand");
+        staticLinks.forEach(link => {
+            link.addEventListener("mouseenter", () => {
+                cursorOutline.style.width = "60px";
+                cursorOutline.style.height = "60px";
+                cursorOutline.style.background = "rgba(129, 140, 248, 0.1)";
+            });
+            link.addEventListener("mouseleave", () => {
+                cursorOutline.style.width = "40px";
+                cursorOutline.style.height = "40px";
+                cursorOutline.style.background = "transparent";
+            });
+        });
+    </script>
+</body>
+
+</html>
